@@ -1,6 +1,6 @@
 # Martin Hunt
 
-## Scientific Software Developer
+**`Scientific Software Developer`**
 
 🔭 I'm currently working on **Writing software for Signal Processing and Hearing Research**
 
