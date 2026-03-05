@@ -183,7 +183,7 @@ I don't really do social media, but you can find me on LinkedIn if you'd like to
 <a href="https://nicegui.io/" target="_blank" rel="noreferrer"> <img src="images/nicegui.png" alt="nicegui" width="40" height="40"/> </a>
 <a href="https://numpy.org/" target="_blank" rel="noreferrer"> <img src="images/numpy.svg" alt="numpy" width="40" height="40"/> </a>
 <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer"> <img src="images/postgresql.svg" alt="postgresql" width="40" height="40"/> </a>
-<a href="https://pptr.dev/" target="_blank" rel="noreferrer"> <img src="images/puppeteer.svg" alt="puppeteer" width="40" height="40"/> </a>
+<a href="https://playwright.dev/" target="_blank" rel="noreferrer"> <img src="images/playwright.svg" alt="playwright" width="40" height="40"/> </a>
 <a href="https://www.python.org/" target="_blank" rel="noreferrer"> <img src="images/python.svg" alt="python" width="40" height="40"/> </a>
 <a href="https://www.qt.io/" target="_blank" rel="noreferrer"> <img src="images/qt.svg" alt="qt" width="40" height="40"/> </a>
 <a href="https://scipy.org/" target="_blank" rel="noreferrer"> <img src="images/scipy.svg" alt="scipy" width="40" height="40"/> </a>
