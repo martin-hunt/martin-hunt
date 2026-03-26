@@ -6,22 +6,36 @@
 
 ---
 
-🤖 Like many developers, I'm currently learning best practices for incorporating Claude Code (and other AI coding tools) into the development process. As the technology rapidly progresses, it is becoming clear that our skillset must also evolve.  Additionally, the
-tools we use to manage our code and projects must also adapt to accommodate the new capabilities and workflows that AI coding tools enable.
+## 🏫 What I'm Learning
 
-I am currently using AI coding tools primarily a as productivity enhancer.  The hype says we will eventually be able to use AI coding tools to write entire applications, but I think we are still a ways off from that.  No one has yet demonstrated that we can reliably use AI coding tools to write complex applications without significant human oversight and intervention.
+<details>
+<summary><b>📚 Rust</b></summary>
+<p>
+Rust is a systems programming language that focuses on safety, speed, and concurrency. It has been gaining popularity in recent years due to its ability to provide memory safety without sacrificing performance.
+</p>
+<p>
+I am really enjoying learning Rust and have been using it for some personal projects. <i>Cargo</i>, Rust's package manager and build system, is fantastic and very similar to Python's <i>uv</i>. The ecosystem seems very mature and there are a lot of great libraries available.
+</p>
 
-The next few years will be very interesting as we shift paradigms from using AI coding tools as a productivity enhancer to using them as a primary development tool.
+</details>
 
+<details>
+<summary><b>🤖 AI Coding Tools</b></summary>
+<p>Like many developers, I'm currently learning best practices for incorporating Claude Code (and other AI coding tools) into the development process. As the technology rapidly progresses, it is becoming clear that our skillset must also evolve.
+</p>
+<p>
 To reach the next step of using AI coding tools to write entire applications, we will need to develop new best practices for how to use these tools effectively.  We will also need to develop new workflows that are designed to work with AI coding tools.  In particular, new tools and processes for CI/CD, validation and acceptance specification and testing will be needed to fully realize the potential of AI coding tools.
-
+</p>
+<p>
 Despite the alarming headlines about AI taking over programming jobs, I believe we are just at the beginning of a new era in software development.  The most successful developers will be those who can effectively leverage AI coding tools to enhance their productivity and creativity, while also maintaining a strong understanding of software engineering principles and best practices.
+</p>
+</details>
 
-- 📫 How to reach me: **<huntmartinm@gmail.com>**
+---
 
 ## 📸 Project Screenshot Gallery
 
-Unfortunately, many of the projects I have worked on are proprietary and cannot be shared publicly. However, I have included screenshots of some of the applications I have developed in the last few yearsto provide a visual representation of my work. These screenshots showcase the user interfaces and features of the applications, giving insight into the types of projects I have been involved in. Please note that while the screenshots provide a glimpse into my work, they do not fully capture the complexity and functionality of the applications I have developed. If you are interested in learning more about my work or have specific questions about the projects, please feel free to reach out to me directly. I am happy to discuss my experience and the technologies I have used in more detail.
+Unfortunately, many of the projects I have worked on are proprietary and cannot be shared publicly. However, I have included screenshots of some of the applications I have developed in the last few years to provide a visual representation of my work. These screenshots showcase the user interfaces and features of the applications, giving insight into the types of projects I have been involved in. Please note that while the screenshots provide a glimpse into my work, they do not fully capture the complexity and functionality of the applications I have developed. If you are interested in learning more about my work or have specific questions about the projects, please feel free to reach out to me directly. I am happy to discuss my experience and the technologies I have used in more detail.
 
 ### Featured Projects
 
@@ -132,14 +146,13 @@ A hearing assessment tool providing comprehensive audiological testing capabilit
 <b>🎵 MUSHRA</b><br/>
 <sub>Multi-Stimulus test with Hidden Reference and Anchor implementation. Standard tool for subjective audio quality assessment in hearing research.</sub>
 </td>
-</tr>
-<tr>
 <td align="center" width="33%">
 <img src="screenshots/BenchTest.png" alt="Bench Test" width="100%" style="border: 1px solid #ddd; border-radius: 4px;"/>
 <br/><br/>
 <b>⚡ BenchTest</b><br/>
 <sub>Measures the SNR and THD of an audio signal when processed by different algorithms.</sub>
 </td>
+<tr>
 <td align="center" width="33%">
 <img src="screenshots/freping.png" alt="FrePing" width="100%" style="border: 1px solid #ddd; border-radius: 4px;"/>
 <br/><br/>
