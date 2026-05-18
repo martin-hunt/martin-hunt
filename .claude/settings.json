@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://playwright.dev/img/playwright-logo.svg\" -o /home/mmh/learn/github_readme/images/playwright.svg)"
+    ]
+  }
+}
