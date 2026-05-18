@@ -1,41 +1,64 @@
 # Martin Hunt
 
-**`Scientific Software Developer`**
+**`Scientific and Embedded Software Developer`**
 
-🔭 I'm currently working on **Writing software for Signal Processing and Hearing Research**
+🔭 I'm currently working on **Writing software for Signal Processing and Hearing Research**.  I'm hoping to get approval to make much of it open source in the near future.
 
 ---
 
 ## 🏫 What I'm Learning
 
-<details>
-<summary><b>📚 Rust</b></summary>
-<p>
-Rust is a systems programming language that focuses on safety, speed, and concurrency. It has been gaining popularity in recent years due to its ability to provide memory safety without sacrificing performance.
-</p>
-<p>
-I am really enjoying learning Rust and have been using it for some personal projects. <i>Cargo</i>, Rust's package manager and build system, is fantastic and very similar to Python's <i>uv</i>. The ecosystem seems very mature and there are a lot of great libraries available.
-</p>
 
-</details>
+### 🤖 AI Coding Tools
 
-<details>
-<summary><b>🤖 AI Coding Tools</b></summary>
-<p>Like many developers, I'm currently learning best practices for incorporating Claude Code (and other AI coding tools) into the development process. As the technology rapidly progresses, it is becoming clear that our skillset must also evolve.
-</p>
-<p>
-To reach the next step of using AI coding tools to write entire applications, we will need to develop new best practices for how to use these tools effectively.  We will also need to develop new workflows that are designed to work with AI coding tools.  In particular, new tools and processes for CI/CD, validation and acceptance specification and testing will be needed to fully realize the potential of AI coding tools.
-</p>
-<p>
-Despite the alarming headlines about AI taking over programming jobs, I believe we are just at the beginning of a new era in software development.  The most successful developers will be those who can effectively leverage AI coding tools to enhance their productivity and creativity, while also maintaining a strong understanding of software engineering principles and best practices.
-</p>
-</details>
+This is an exciting time for software development. Over the last few years I've shifted my workflow as the models and tools have improved. At this point I'm writing >90% of my code with AI, across unit tests, documentation, and full modules. I've read hundreds of articles, watched dozens of videos, and put these tools through several real projects. Here's what I've learned.
 
----
+My progression: GitHub Copilot as smarter autocomplete -> prompt engineering for tests and docs -> Claude Code. Switching to Claude Code enabled memory (CLAUDE.md / AGENTS.md), skills, hooks, plugins — what the community now calls the "user harness." Tuning that environment is the difference between AI-generated code that I'd ship and AI-generated code that I wouldn't.
+
+### What works
+
+**Brownfield with a real test suite.** An existing codebase is an executable specification. The model can read the structure, infer the style, follow established patterns, and — critically — *run the tests* to verify its work. The feedback loop is tight: change -> test -> diff. That's the loop that produces shippable code.
+
+**Tests are the most important part of the spec.** Prose specs are ambiguous, decay over time, and can't be verified. Tests are unambiguous and runnable. When I add a feature, the model writes failing tests first, then implements until they pass. When I fix a bug, step one is a test that reproduces it. The model doesn't need to "understand the spec" — it needs a goal it can verify by running code.
+
+**Greenfield is brownfield with a bootstrap step.** Use plan mode to sketch the project, generate an initial skeleton *with tests*, then operate as brownfield from there. The spec-writing phase is short and disposable — once code exists, the code is the spec.
+
+**Invest in the harness.** Code quality tracks harness quality. Once the harness can run tests, format, and lint on its own, the model can verify its own work between turns, and the surface area you have to babysit collapses.
+
+### What doesn't
+
+The industry is rapidly reinventing software engineering, and much of it is hype. Solid engineering is getting drowned out by PR-driven stories about startups burning a million dollars in tokens to ship a side project.
+
+**Vibe Coding** works for throwaway prototypes — note-taking apps with cute names and nice landing pages. Don't ship anything you'd need to maintain.
+
+**Spec-Driven Development** is more thoughtful but structurally broken. You write a detailed spec; the model generates code from it. The spec is never perfect, so you iterate. But each regeneration throws away the understanding you'd built about the previous version, the code is something neither you nor the model owns, and there's no clean exit to hand-editing. You're locked in the loop, burning tokens.
+
+The deeper problem is that prose is the wrong feedback medium. Tests run; specs don't. Without an executable target, every "iteration" is just rephrasing.
+
+### Harness engineering notes
+
+- **It's a hierarchy.** Global CLAUDE.md and skills apply to every project, so keep them minimal — preferences, not project specifics. Project-level files add the build/test commands, conventions, and domain knowledge that change per repo. Directory-level files handle subsystem quirks. Each layer extends the one above it.
+
+- **What goes in CLAUDE.md.** Build/test/lint commands the model should run before declaring done; conventions you keep restating ("we use X over Y, here's why"); a domain glossary for non-obvious terms; paths to design docs or schemas worth reading first; explicit "never do Z" rules from past mistakes. Keep it terse — every line costs context on every turn.  You can break the file up into multiple files and import them using the "@" syntax to keep things organized, but the context cost remains.
+
+- **Skills vs hooks.** Skills are model-invoked capabilities the agent decides to use ("review this PR", "run security scan"). Hooks are deterministic shell scripts the harness fires on events (post-edit format, pre-commit lint). Different mechanisms: skills handle judgment calls, hooks handle invariants. Don't make the model "remember to format" — that's a hook.
+
+- **Allowlist your read-only commands.** Auto-permitting common reads — `git status`, `ls`, `grep`, your test runner — is one of the biggest friction reducers. The model stops asking permission for things you'd never deny, and the loop tightens dramatically.
+
+- **The feedback loop is the point.** 
+  - Same mistake twice -> CLAUDE.md. If you correct "use X not Y" once, fine. If you correct it again next session, the lesson didn't persist — because you are the memory, not the harness. Write it down once and the model gets it free forever.
+
+  - Ten minutes of back-and-forth -> skill. Long thrash usually means you're hand-walking the model through a procedure: "first check the logs, then run this, then look for that pattern...". That procedure is a skill. Encode it once, invoke it with one phrase next time.
+
+  - Every correction is a signal. The general form. Before you type the correction, ask: why was this needed? Missing context? -> CLAUDE.md. Missing capability? -> skill or hook. Missing permission? -> allowlist. The correction itself is the symptom; the harness gap is the cause.
+
+- **Plan mode for anything non-trivial.** Let the model think before it writes. Plan mode separates "design the change" from "make the change" and catches misunderstandings before they hit code. For one-line fixes it's overhead; for anything multi-file it's the cheapest insurance you can buy.
+
 
 ## 📸 Project Screenshot Gallery
 
-Unfortunately, many of the projects I have worked on are proprietary and cannot be shared publicly. However, I have included screenshots of some of the applications I have developed in the last few years to provide a visual representation of my work. These screenshots showcase the user interfaces and features of the applications, giving insight into the types of projects I have been involved in. Please note that while the screenshots provide a glimpse into my work, they do not fully capture the complexity and functionality of the applications I have developed. If you are interested in learning more about my work or have specific questions about the projects, please feel free to reach out to me directly. I am happy to discuss my experience and the technologies I have used in more detail.
+Unfortunately, many of the projects I have worked on are proprietary and cannot be shared publicly. Much of my code was written for embedded devices most of the rest for desktops. The ones with GUIs were written so the realtime code running on the embedded device (or desktop) is controlled by IPC and a small embedded web server. I have included screenshots of some of the applications I have developed in the last few years to provide a visual representation of my work. These screenshots showcase the user interfaces and features of the applications, giving insight into the types of projects I have been involved in. Please note that while the screenshots provide a glimpse into my work, they do not fully capture the complexity and functionality of the applications I have developed. If you are interested in learning more about my work or have specific questions about the projects, please feel free to reach out to me directly. I am happy to discuss my experience and the technologies I have used in more detail.
+
 
 ### Featured Projects
 
@@ -45,9 +68,9 @@ Unfortunately, many of the projects I have worked on are proprietary and cannot 
 
 **🎯 SpeechFit - Audiology Research Platform**
 
-A comprehensive web application for conducting hearing research studies and managing participant sessions. Features include real-time data visualization, researcher dashboards, session management, and advanced acoustic analysis tools.
+An application for conducting hearing research studies and managing participant sessions. Features include real-time data visualization, researcher dashboards, session management, and advanced acoustic analysis tools.
 
-*Tech Stack: AWS, Python, FastAPI, Vue.js, PostgreSQL, NiceGUI*
+*Tech Stack: C++, Python, FastAPI, Vue.js, PostgreSQL, NiceGUI*
 
 </td>
 <td width="40%">
@@ -81,7 +104,7 @@ A comprehensive web application for conducting hearing research studies and mana
 
 A hearing assessment tool providing comprehensive audiological testing capabilities. Includes automated test protocols, real-time threshold tracking, and detailed result reporting for clinical and research applications.
 
-*Tech Stack: Python, NumPy, SciPy, Nuitka*
+*Tech Stack: C++, Python, NumPy, SciPy, Nuitka*
 
 </td>
 <td width="40%">
