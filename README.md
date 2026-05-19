@@ -11,9 +11,9 @@
 
 ### 🤖 AI Coding Tools
 
-This is an exciting time for software development. Over the last few years I've shifted my workflow as the models and tools have improved. At this point I'm writing >90% of my code with AI, across unit tests, documentation, and full modules. I've read hundreds of articles, watched dozens of videos, and put these tools through several real projects. Here's what I've learned.
+This is an exciting time for software development. Over the last few years I've shifted my workflow as the models and tools have improved. At this point I'm writing >90% of my code with AI, across unit tests, documentation, and full modules. I've read hundreds of articles, watched tons of videos, and put these tools through several real projects and dozens of experiments. Here's what I've learned.
 
-My progression: GitHub Copilot as smarter autocomplete -> prompt engineering for tests and docs -> Claude Code. Switching to Claude Code enabled memory (CLAUDE.md / AGENTS.md), skills, hooks, plugins — what the community now calls the "user harness." Tuning that environment is the difference between AI-generated code that I'd ship and AI-generated code that I wouldn't.
+My progression: GitHub Copilot as smarter autocomplete -> prompt engineering for tests and docs -> Claude Code. Switching to Claude Code enabled memory (CLAUDE.md / AGENTS.md), skills, hooks, plugins — what the community now calls the "user harness." Tuning that environment is the difference between an efficient AI coding environment suitable for production and an inefficient mess that wastes time and money. The harness is the interface between you and the model, and it's where your time investment has the biggest leverage.
 
 ### What works
 
